@@ -104,17 +104,25 @@ local Player       = Players.LocalPlayer
 
 --// Initiate Project Locked In Alien
 
-task.spawn(function()
-    while task.wait() do
-        if Lighting.TimeOfDay ~= "00:00" then
-            Lighting.TimeOfDay = "00:00"
+local function LockIn()
+    task.spawn(function()
+        while task.wait() do
+            if Lighting.TimeOfDay ~= "00:00" then
+                Lighting.TimeOfDay = "00:00"
+            end
         end
-    end
-end)
+    end)
 
-print(alien)
-setclipboard(alien)
+    print(alien)
+    setclipboard(alien)
+    
+    task.spawn(function()
+        while task.wait(0.5) do
+            error("The Alien Has Locked In And Has Gained ∞ Aura")
+        end
+    end)
 
-task.wait(5)
+    task.wait(5)
 
-Player:Kick("Locked In Alien Has Taken Over\n\n" .. alien)
+    Player:Kick("The Locked In Alien Has Taken Control And Has Grown A Second Pair Of Aura Generating Cores" .. alien)
+end
