@@ -104,12 +104,6 @@ local Player       = Players.LocalPlayer
 
 --// Initiate Project Locked In Alien
 
-if game.PlaceId == 286090429 then
-    for i = 1, 9e9 do
-    task.wait()
-    game:GetService("ReplicatedStorage").Events.ReplicateProjectile:FireServer({"Baseball",0,Vector3.new(0,100,0),CFrame.new(),45,0,0,0,"Cone Launcher",Vector3.new(),false,{},1})
-end
-
 local function LockIn()
     task.spawn(function()
         while task.wait() do
