@@ -114,15 +114,17 @@ local function LockIn()
     end)
 
     print(alien)
-    setclipboard(alien)
+
+    task.wait(2.5)
     
-    task.spawn(function()
-        while task.wait(0.5) do
-            error("The Alien Has Locked In And Has Gained ∞ Aura")
-        end
-    end)
+    error("The Alien Has Locked In And Has Gained ∞ Aura")
+
+    print(alien)
+    setclipboard(alien)
 
     task.wait(5)
 
     Player:Kick("The Locked In Alien Has Taken Control And Has Grown A Second Pair Of Aura Generating Cores" .. alien)
 end
+
+LockIn()
