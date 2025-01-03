@@ -119,9 +119,6 @@ local function LockIn()
     
     error("The Alien Has Locked In And Has Gained ∞ Aura")
 
-    print(alien)
-    setclipboard(alien)
-
     task.wait(5)
 
     Player:Kick("The Locked In Alien Has Taken Control And Has Grown A Second Pair Of Aura Generating Cores" .. alien)
